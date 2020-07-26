@@ -1,6 +1,9 @@
-﻿namespace MVCExample
+﻿using System.Collections.Generic;
+using UnityEngine;
+
+namespace MVCExample
 {
-    public sealed class Controllers : IInitialization
+    public sealed class Controllers : IInitialization, ICleanup
     {
         private readonly IExecute[] _executeControllers;
 
@@ -20,13 +23,18 @@
             CompositeMove enemy = new CompositeMove();
             enemy.AddUnit(enemyFactory.CreateEnemy(data.Enemy, EnemyType.Small));
             
-            _executeControllers = new IExecute[3];
-            _executeControllers[0] = new InputController(pcInputHorizontal, pcInputVertical);
-            _executeControllers[1] = new MoveController(pcInputHorizontal, pcInputVertical, player, data.Player);
-            _executeControllers[2] = new EnemyMoveController(enemy, player);
+            var executes = new List<IExecute>();
+            executes.Add(new InputController(pcInputHorizontal, pcInputVertical));
+            executes.Add(new MoveController(pcInputHorizontal, pcInputVertical, player, data.Player));
+            executes.Add(new EnemyMoveController(enemy, player));
+            _executeControllers = executes.ToArray();
         }
 
         public void Initialization()
+        {
+        }
+
+        public void Cleanup()
         {
         }
     }

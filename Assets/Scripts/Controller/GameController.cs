@@ -6,6 +6,7 @@ namespace MVCExample
     {
         [SerializeField] private Data _data;
         private Controllers _controllers;
+        
         private void Start()
         {
             _controllers = new Controllers(_data);
