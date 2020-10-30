@@ -4,9 +4,16 @@ namespace MVCExample
 {
     public sealed class EnemyFactory : IEnemyFactory
     {
-        public IEnemy CreateEnemy(EnemyData data, EnemyType type)
+        private readonly EnemyData _data;
+
+        public EnemyFactory(EnemyData data)
         {
-            var enemyProvider = data.GetEnemy(type);
+            _data = data;
+        }
+        
+        public IEnemy CreateEnemy(EnemyType type)
+        {
+            var enemyProvider = _data.GetEnemy(type);
             return Object.Instantiate(enemyProvider);
         }
     }

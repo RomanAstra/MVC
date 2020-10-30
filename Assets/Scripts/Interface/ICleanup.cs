@@ -1,6 +1,6 @@
 ﻿namespace MVCExample
 {
-    public interface ICleanup
+    public interface ICleanup : IController
     {
         void Cleanup();
     }

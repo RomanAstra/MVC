@@ -14,8 +14,7 @@ namespace MVCExample
         public Transform CreatePlayer()
         {
            return new GameObject("player").
-               AddSprite(_playerData.Sprite).
-               AddRigidbody2D(7).AddRigidbody2D(8).transform;
+               AddSprite(_playerData.Sprite).transform;
         }
     }
 }

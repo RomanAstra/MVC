@@ -5,12 +5,12 @@
         private readonly IUserInputProxy _horizontal;
         private readonly IUserInputProxy _vertical;
         
-        public InputController(IUserInputProxy horizontal, IUserInputProxy vertical)
+        public InputController((IUserInputProxy inputHorizontal, IUserInputProxy inputVertical) input)
         {
-            _horizontal = horizontal;
-            _vertical = vertical;
+            _horizontal = input.inputHorizontal;
+            _vertical = input.inputVertical;
         }
-        
+
         public void Execute(float deltaTime)
         {
             _horizontal.GetAxis();

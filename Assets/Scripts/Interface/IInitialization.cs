@@ -1,6 +1,6 @@
 ﻿namespace MVCExample
 {
-    public interface IInitialization
+    public interface IInitialization : IController
     {
         void Initialization();
     }
