@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace MVCExample
 {
@@ -26,6 +27,11 @@ namespace MVCExample
             {
                 _rigidbody2D.velocity = Vector2.zero;
             }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            
         }
     }
 }

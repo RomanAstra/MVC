@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace MVCExample
 {
     public sealed class GameController : MonoBehaviour
     {
         [SerializeField] private Data _data;
+        [SerializeField] private Transform _canvas;
+        [SerializeField] private Button _button;
         private Controllers _controllers;
         
         private void Start()
         {
             Camera camera = Camera.main;
-            var inputInitialization = new InputInitialization();
+            var inputInitialization = new InputInitialization(new MobileInputFactory(_canvas, _button));
             var playerFactory = new PlayerFactory(_data.Player);
             var playerInitialization = new PlayerInitialization(playerFactory);
             var enemyFactory = new EnemyFactory(_data.Enemy);

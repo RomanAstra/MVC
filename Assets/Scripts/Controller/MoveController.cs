@@ -12,7 +12,8 @@ namespace MVCExample
         private IUserInputProxy _horizontalInputProxy;
         private IUserInputProxy _verticalInputProxy;
 
-        public MoveController((IUserInputProxy inputHorizontal, IUserInputProxy inputVertical) input, Transform unit, IUnit unitData)
+        public MoveController((IUserInputProxy inputHorizontal, IUserInputProxy inputVertical) input,
+            Transform unit, IUnit unitData)
         {
             _unit = unit;
             _unitData = unitData;
