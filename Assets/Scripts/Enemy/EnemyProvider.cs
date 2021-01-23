@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace MVCExample
 {
     public sealed class EnemyProvider : MonoBehaviour, IEnemy
     {
+        public event Action<int> OnTriggerEnterChange;
         [SerializeField] private float _speed;
         [SerializeField] private float _stopDistance;
         private Rigidbody2D _rigidbody2D;
@@ -28,9 +30,9 @@ namespace MVCExample
             }
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            
+            OnTriggerEnterChange?.Invoke(other.gameObject.GetInstanceID());
         }
     }
 }

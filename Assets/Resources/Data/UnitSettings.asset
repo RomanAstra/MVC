@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: UnitSettings
   m_EditorClassIdentifier: 
   Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  _speed: 10
+  _speed: 9.8
