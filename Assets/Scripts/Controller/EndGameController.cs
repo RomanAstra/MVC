@@ -34,7 +34,7 @@ namespace MVCExample
         {
             foreach (var enemy in _getEnemies)
             {
-                enemy.OnTriggerEnterChange += EnemyOnOnTriggerEnterChange;
+                enemy.OnTriggerEnterChange -= EnemyOnOnTriggerEnterChange;
             }
         }
     }
