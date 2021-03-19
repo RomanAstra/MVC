@@ -7,10 +7,11 @@ namespace MVCExample
         private readonly IPlayerFactory _playerFactory;
         private Transform _player;
 
-        public PlayerInitialization(IPlayerFactory playerFactory)
+        public PlayerInitialization(IPlayerFactory playerFactory, Vector2 positionPlayer)
         {
             _playerFactory = playerFactory;
             _player = _playerFactory.CreatePlayer();
+            _player.position = positionPlayer;
         }
         
         public void Initialization()

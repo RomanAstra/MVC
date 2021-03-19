@@ -1,4 +1,6 @@
-﻿namespace MVCExample
+﻿using UnityEngine;
+
+namespace MVCExample
 {
     internal sealed class InputInitialization : IInitialization
     {
@@ -7,6 +9,10 @@
 
         public InputInitialization()
         {
+            if (Application.platform == RuntimePlatform.Android)
+            {
+                _pcInputHorizontal = new MobileInput();
+            }
             _pcInputHorizontal = new PCInputHorizontal();
             _pcInputVertical = new PCInputVertical();
         }

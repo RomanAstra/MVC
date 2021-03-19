@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   _speed: 9.8
+  _position: {x: 0, y: 3}

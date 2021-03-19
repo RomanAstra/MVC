@@ -9,7 +9,7 @@ namespace MVCExample
             Camera camera = Camera.main;
             var inputInitialization = new InputInitialization();
             var playerFactory = new PlayerFactory(data.Player);
-            var playerInitialization = new PlayerInitialization(playerFactory);
+            var playerInitialization = new PlayerInitialization(playerFactory, data.Player.Position);
             var enemyFactory = new EnemyFactory(data.Enemy);
             var enemyInitialization = new EnemyInitialization(enemyFactory);
            controllers.Add(inputInitialization);
