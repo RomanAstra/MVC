@@ -55,7 +55,7 @@ namespace MVCExample
             return gameObject;
         }
 
-        private static T GetOrAddComponent<T>(this GameObject gameObject) where T : Component
+        public static T GetOrAddComponent<T>(this GameObject gameObject) where T : Component
         {
             var result = gameObject.GetComponent<T>();
             if (!result)

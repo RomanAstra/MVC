@@ -6,12 +6,12 @@ namespace MVCExample
     internal sealed class EndGameController  : IInitialization, ICleanup
     {
         private readonly IEnumerable<IEnemy> _getEnemies;
-        private readonly int _getInstanceID;
+        private readonly int _playerID;
 
-        public EndGameController(IEnumerable<IEnemy> getEnemies, int getInstanceID)
+        public EndGameController(IEnumerable<IEnemy> getEnemies, int playerID)
         {
             _getEnemies = getEnemies;
-            _getInstanceID = getInstanceID;
+            _playerID = playerID;
         }
 
         public void Initialization()
@@ -24,7 +24,7 @@ namespace MVCExample
 
         private void EnemyOnOnTriggerEnterChange(int value)
         {
-            if (value == _getInstanceID)
+            if (value == _playerID)
             {
                 Debug.Log(22);
             }

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Model;
+using UnityEngine;
+using View;
 
 namespace MVCExample
 {

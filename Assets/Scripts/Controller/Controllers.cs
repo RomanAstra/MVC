@@ -11,10 +11,10 @@ namespace MVCExample
 
         internal Controllers()
         {
-            _initializeControllers = new List<IInitialization>();
-            _executeControllers = new List<IExecute>();
-            _lateControllers = new List<ILateExecute>();
-            _cleanupControllers = new List<ICleanup>();
+            _initializeControllers = new List<IInitialization>(8);
+            _executeControllers = new List<IExecute>(8);
+            _lateControllers = new List<ILateExecute>(8);
+            _cleanupControllers = new List<ICleanup>(8);
         }
 
         internal Controllers Add(IController controller)

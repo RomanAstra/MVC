@@ -19,7 +19,11 @@ namespace MVCExample
 
         public EnemyProvider GetEnemy(EnemyType type)
         {
-            var enemyInfo = _enemyInfos.First(info => info.Type == type);
+            var enemyInfo = _enemyInfos.FirstOrDefault(info => info.Type == type);
+            if (enemyInfo.EnemyPrefab == null)
+            {
+                throw new InvalidOperationException($"Enemy type {type} not found");
+            }
             return enemyInfo.EnemyPrefab;
         }
     }

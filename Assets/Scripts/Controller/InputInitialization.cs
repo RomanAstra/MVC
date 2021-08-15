@@ -12,6 +12,7 @@ namespace MVCExample
             if (Application.platform == RuntimePlatform.Android)
             {
                 _pcInputHorizontal = new MobileInput();
+                return;
             }
             _pcInputHorizontal = new PCInputHorizontal();
             _pcInputVertical = new PCInputVertical();

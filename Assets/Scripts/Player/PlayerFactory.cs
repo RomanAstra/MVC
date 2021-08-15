@@ -13,7 +13,7 @@ namespace MVCExample
 
         public Transform CreatePlayer()
         {
-           return new GameObject("player").
+           return new GameObject(_playerData.Name).
                AddSprite(_playerData.Sprite).AddCircleCollider2D().
                AddCircleCollider2D().AddTrailRenderer().transform;
         }

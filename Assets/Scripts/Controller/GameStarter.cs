@@ -2,7 +2,7 @@
 
 namespace MVCExample
 {
-    public sealed class GameController : MonoBehaviour
+    public sealed class GameStarter : MonoBehaviour
     {
         [SerializeField] private Data _data;
         private Controllers _controllers;
