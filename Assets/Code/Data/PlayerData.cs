@@ -10,7 +10,7 @@ namespace MVCExample
         [SerializeField, Range(0, 100)] private float _speed;
         [SerializeField] private Vector2Int _position;
         public float Speed => _speed;
-        public Vector2 Position => _position;
+        public Vector2Int Position => _position;
         public string Name => _name;
     }
 }

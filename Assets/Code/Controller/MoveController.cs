@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using Model;
+using UnityEngine;
 
 namespace MVCExample
 {
     public sealed class MoveController : IExecute, ICleanup
     {
         private readonly Transform _unit;
-        private readonly IUnit _unitData;
+        private readonly IPlayerModel _unitData;
         private float _horizontal;
         private float _vertical;
         private Vector3 _move;
@@ -13,7 +14,7 @@ namespace MVCExample
         private IUserInputProxy _verticalInputProxy;
 
         public MoveController((IUserInputProxy inputHorizontal, IUserInputProxy inputVertical) input,
-            Transform unit, IUnit unitData)
+            Transform unit, IPlayerModel unitData)
         {
             _unit = unit;
             _unitData = unitData;

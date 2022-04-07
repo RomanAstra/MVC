@@ -19,7 +19,7 @@ namespace MVCExample
             {
                 if (_player == null)
                 {
-                    _player = Load<PlayerData>("Data/" + _playerDataPath);
+                    _player = Load<PlayerData>(Path.Combine("Data", _playerDataPath));
                 }
 
                 return _player;
@@ -33,7 +33,7 @@ namespace MVCExample
             {
                 if (_enemy == null)
                 {
-                    _enemy = Load<EnemyData>("Data/" + _enemyDataPath);
+                    _enemy = Load<EnemyData>(Path.Combine("Data", _enemyDataPath));
                 }
 
                 return _enemy;
